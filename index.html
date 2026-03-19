@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,12 +10,6 @@
     <link rel="preconnect" href="https://s.ytimg.com" crossorigin>
     <link rel="preconnect" href="https://www.google.com" crossorigin>
     <link rel="preconnect" href="https://www.googlevideo.com" crossorigin>
-    <link rel="dns-prefetch" href="//www.youtube-nocookie.com">
-    <link rel="dns-prefetch" href="//i.ytimg.com">
-    <link rel="dns-prefetch" href="//s.ytimg.com">
-    <link rel="dns-prefetch" href="//www.google.com">
-    <link rel="dns-prefetch" href="//www.googlevideo.com">
-    <!--copied source code from ketobhai's recent video and changed the website content a bit , sorry -->
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,12 +23,6 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-        }
-
-        h1 {
-            color: #ffd700;
-            margin-bottom: 5px;
-            font-size: 2.5rem;
         }
 
         p {
@@ -134,11 +123,10 @@
 
         iframe {
             width: 100%;
-            height: 480px;
+            height: 280px;
             border-radius: 10px;
             margin-bottom: 0;
             border: none;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             background-color: #000;
         }
 
@@ -224,8 +212,7 @@
 
             <div class="video-wrap">
                 <div class="video-wait" id="videoWait"> ওয়েট 🤚</div>
-                <iframe id="salamiVideo" title="Video" src="" loading="eager"
-                    referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture"
+                <iframe id="salamiVideo" title="Video" src="" allow="autoplay; fullscreen; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
 
@@ -249,21 +236,26 @@
             wheel.style.transform = `rotate(${currentRotation}deg)`;
 
             setTimeout(() => {
-                document.getElementById('resultModal').style.display = 'flex';
+                const resultModal = document.getElementById('resultModal');
+                resultModal.style.display = 'flex';
                 const videoWait = document.getElementById('videoWait');
                 const salamiVideo = document.getElementById('salamiVideo');
-                videoWait.style.display = 'flex';
+
+            
+                salamiVideo.src = "https://www.youtube-nocookie.com/embed/ITe26yUim7c?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1";
+
                 salamiVideo.onload = () => {
                     videoWait.style.display = 'none';
                 };
-                salamiVideo.src = "https://www.youtube-nocookie.com/embed/ITe26yUim7c?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1";
+
                 isSpinning = false;
             }, 4200);
         }
 
         function closeModal() {
             document.getElementById('resultModal').style.display = 'none';
-            document.getElementById('salamiVideo').src = "";
+            const salamiVideo = document.getElementById('salamiVideo');
+            salamiVideo.src = ""; 
             document.getElementById('videoWait').style.display = 'flex';
         }
     </script>
