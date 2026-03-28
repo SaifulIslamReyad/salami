@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Warning</title>
+    <style>
+        body {
+            background: black;
+            color: red;
+            font-family: monospace;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .box {
+            border: 2px solid red;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 0 20px red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>⚠ DEVICE WARNING ⚠</h1>
+
+        <p>your device has been compromised...</p>
+        <p>hackers love careless clicks </p>
+
+        
+
+        <p>
+            Lesson: <br><br>
+            Never click unknown links blindly. <br>
+            Always stay safe and aware online 
+        </p>
+
+        <br>
+        <button onclick="goBack()" style="padding:10px 20px; font-size:16px;">
+            Go Back
+        </button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>
