@@ -13,7 +13,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a4a38;
+            background-color: #000000;
             color: #fff;
             text-align: center;
             margin: 0;
@@ -48,7 +48,7 @@
             height: 0;
             border-left: 15px solid transparent;
             border-right: 15px solid transparent;
-            border-top: 30px solid #0022ff;
+            border-top: 30px solid #690013;
             z-index: 10;
             filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
         }
@@ -179,7 +179,7 @@
 
 <body>
 
-    <p>চাকা স্পিন করে লুফে নিন আপনার ঈদ সালামি </p>
+    <p>চাকা স্পিন করে বুঝে নিন আপনার এসএসসির সালামি </p>
 
     <div class="wheel-container">
         <div class="pointer"></div>
@@ -193,12 +193,12 @@
                 <path d="M0,0 L-86.6,-50 A100,100 0 0,1 0,-100 Z" fill="#33FFF6"></path>
             </g>
             <g font-size="14" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">
-                <text transform="rotate(30) translate(0, -70)" fill="#1a4a38">দোয়া</text>
-                <text transform="rotate(90) translate(0, -70)">দাঁত তোলা</text>
-                <text transform="rotate(150) translate(0, -70)" fill="#1a4a38">৫০ টাকা</text>
-                <text transform="rotate(210) translate(0, -70)">স্কেলিং</text>
-                <text transform="rotate(270) translate(0, -70)">৫০০ টাকা</text>
-                <text transform="rotate(330) translate(0, -70)" fill="#1a4a38">ফিলিং</text>
+                <text transform="rotate(30) translate(0, -70)" fill="#1a4a38">দোয়া</text> <text
+                    transform="rotate(90) translate(0, -70)">বিরিয়ানি</text> <text
+                    transform="rotate(150) translate(0, -70)" fill="#1a4a38">৫০ টাকা</text> <text
+                    transform="rotate(210) translate(0, -70)">বদদোয়া</text> <text
+                    transform="rotate(270) translate(0, -70)">এডভাইস</text> <text
+                    transform="rotate(330) translate(0, -70)" fill="#1a4a38">১০০ টাকা</text>
             </g>
         </svg>
     </div>
@@ -210,13 +210,11 @@
             <h2>আলহামদুলিল্লাহ! </h2>
             <p>আপনি জিতেছেন: <strong> আনলিমিটেড দোয়া!</strong></p>
 
-            <div class="video-wrap">
-                <div class="video-wait" id="videoWait"> ওয়েট 🤚</div>
-                <iframe id="salamiVideo" title="Video" src="" allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
+            <p style="font-weight: bold; color: #1a4a38;">
+                মনযোগ দিয়ে পড়ুন , মনযোগ দিতে পয়সা লাগে না
+            </p>
 
-            <button class="close-btn" onclick="closeModal()"> দোয়া ক্লেইম করুন</button>
+            <button class="close-btn" onclick="claimSalami()">দোয়া ক্লেইম করুন</button>
         </div>
     </div>
 
@@ -236,26 +234,19 @@
             wheel.style.transform = `rotate(${currentRotation}deg)`;
 
             setTimeout(() => {
-                const resultModal = document.getElementById('resultModal');
-                resultModal.style.display = 'flex';
-                const videoWait = document.getElementById('videoWait');
-                const salamiVideo = document.getElementById('salamiVideo');
-
-            
-                salamiVideo.src = "https://www.youtube-nocookie.com/embed/ITe26yUim7c?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1";
-
-                salamiVideo.onload = () => {
-                    videoWait.style.display = 'none';
-                };
-
+                document.getElementById('resultModal').style.display = 'flex';
                 isSpinning = false;
             }, 4200);
+        }
+
+        function claimSalami() {
+            window.location.href = "warning.html";
         }
 
         function closeModal() {
             document.getElementById('resultModal').style.display = 'none';
             const salamiVideo = document.getElementById('salamiVideo');
-            salamiVideo.src = ""; 
+            salamiVideo.src = "";
             document.getElementById('videoWait').style.display = 'flex';
         }
     </script>
